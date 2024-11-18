@@ -287,7 +287,7 @@
                 <img src="https://via.placeholder.com/400" alt="Diana Bandel">
                 <div class="text">
                     <p> <!-- Add biography content here -->
-                        Diana Bandel is a dedicated Christian marriage minister with over 20 years of experience...
+                        Diana Bandel is a dedicated Christian marriage minister
                     </p>
                 </div>
             </div>
@@ -301,15 +301,15 @@
             <div class="cards">
                 <div class="card">
                     <h3>Marriage Ceremonies</h3>
-                    <p><!-- Description of marriage ceremonies --></p>
+                    <p><!-- Description --></p>
                 </div>
                 <div class="card">
-                    <h3>Premarital Counseling</h3>
-                    <p><!-- Description of counseling services --></p>
+                    <h3>Wedding Art</h3>
+                    <p><!-- Description --></p>
                 </div>
                 <div class="card">
-                    <h3>Wedding Planning</h3>
-                    <p><!-- Description of wedding planning --></p>
+                    <h3>Madi Flower Things</h3>
+                    <p><!-- Description--></p>
                 </div>
             </div>
         </div>
@@ -333,20 +333,53 @@
 
     <!-- Contact Section -->
     <section id="contact">
-        <div class="container">
-            <h2>Contact Diana</h2>
-            <form action="https://formspree.io/f/your-form-id" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="_replyto" placeholder="Your Email" required>
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-            <p style="text-align:center; margin-top:20px;">
-                Or reach us at <a href="mailto:diana@dianabandel.com">diana@dianabandel.com</a> | 
-                Call us at (123) 456-7890
-            </p>
-        </div>
-    </section>
+    <div class="container">
+        <h2>Contact Diana</h2>
+        <form id="contactForm">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="_replyto" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p id="formStatus" style="text-align:center; margin-top:20px;"></p>
+        <p style="text-align:center; margin-top:20px;">
+            Or reach us at <a href="mailto:dianajbandel@gmail.com">dianajbandel@gmail.com</a> | 
+            Call us at (512) 808-8439
+        </p>
+    </div>
+</section>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', async function (event) {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+        const formStatus = document.getElementById('formStatus');
+
+        try {
+            const response = await fetch('https://formspree.io/f/xwpkqpby', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json'
+                },
+                body: formData
+            });
+
+            if (response.ok) {
+                form.reset();
+                formStatus.textContent = 'Message sent successfully!';
+                formStatus.style.color = 'green';
+            } else {
+                formStatus.textContent = 'There was an error sending your message.';
+                formStatus.style.color = 'red';
+            }
+        } catch (error) {
+            formStatus.textContent = 'There was an error sending your message.';
+            formStatus.style.color = 'red';
+        }
+    });
+</script>
+
 
     <!-- Footer -->
     <footer>
