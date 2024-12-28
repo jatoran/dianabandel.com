@@ -1,395 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diana Bandel - Christian Marriage Minister</title>
-    <style>
-        /* Reset some default browser styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* Header Styles */
-        header {
-            background: #f8f9fa;
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            overflow: hidden;
-        }
-
-        .logo {
-            float: left;
-            font-size: 24px;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-
-        nav {
-            float: right;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            font-size: 16px;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #3498db;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-            padding-top: 80px; /* To account for fixed header */
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 20px;
-            max-width: 600px;
-        }
-
-        /* Sections */
-        section {
-            padding: 60px 0;
-        }
-
-        /* About Section */
-        #about {
-            background: #f1f1f1;
-        }
-
-        #about .content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        #about img {
-            flex: 1;
-            max-width: 400px;
-            width: 100%;
-            border-radius: 10px;
-            margin-right: 20px;
-        }
-
-        #about .text {
-            flex: 2;
-        }
-
-        /* Services Section */
-        #services .cards {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        #services .card {
-            background: #fff;
-            flex: 1 1 30%;
-            margin: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        #services .card h3 {
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-
-        /* Testimonials Section */
-        #testimonials .testimonial {
-            background: #fff;
-            padding: 20px;
-            margin: 10px auto;
-            max-width: 700px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        #testimonials .testimonial p {
-            font-style: italic;
-            margin-bottom: 10px;
-        }
-
-        #testimonials .testimonial h4 {
-            color: #2c3e50;
-        }
-
-        /* Contact Section */
-        #contact form {
-            max-width: 600px;
-            margin: auto;
-        }
-
-        #contact input, 
-        #contact textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        #contact button {
-            padding: 10px 20px;
-            border: none;
-            background: #3498db;
-            color: #fff;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        #contact button:hover {
-            background: #2980b9;
-        }
-
-        /* Footer */
-        footer {
-            background: #2c3e50;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                background: #f8f9fa;
-                position: absolute;
-                top: 60px;
-                right: 0;
-                width: 200px;
-                display: none;
-            }
-
-            nav ul.active {
-                display: flex;
-            }
-
-            nav ul li {
-                margin: 10px 0;
-            }
-
-            .menu-toggle {
-                display: block;
-                cursor: pointer;
-                font-size: 24px;
-                color: #2c3e50;
-            }
-
-            #about .content {
-                flex-direction: column;
-            }
-
-            #about img {
-                margin: 0 0 20px 0;
-            }
-
-            #services .cards {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            #services .card {
-                flex: 1 1 80%;
-            }
-        }
-
-        @media (min-width: 769px) {
-            .menu-toggle {
-                display: none;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Diana Bandel - Christian Marriage Minister</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="logo">Diana Bandel</div>
-            <nav>
-                <div class="menu-toggle" id="mobile-menu">
-                    &#9776;
-                </div>
-                <ul id="nav-list">
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div>
-            <h1>Welcome to Diana Bandel Ministries</h1>
-            <p>Guiding you through the sacred journey of marriage with faith and love.</p>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2>About Diana</h2>
-            <div class="content">
-                <img src="https://via.placeholder.com/400" alt="Diana Bandel">
-                <div class="text">
-                    <p> <!-- Add biography content here -->
-                        Diana Bandel is a dedicated Christian marriage minister
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="cards">
-                <div class="card">
-                    <h3>Marriage Ceremonies</h3>
-                    <p><!-- Description --></p>
-                </div>
-                <div class="card">
-                    <h3>Wedding Art</h3>
-                    <p><!-- Description --></p>
-                </div>
-                <div class="card">
-                    <h3>Madi Flower Things</h3>
-                    <p><!-- Description--></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials">
-        <div class="container">
-            <h2>Testimonials</h2>
-            <div class="testimonial">
-                <p>"Diana made our wedding day truly special and blessed."</p>
-                <h4>- John & Mary</h4>
-            </div>
-            <!-- Add more testimonials as needed -->
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-    <div class="container">
-        <h2>Contact Diana</h2>
-        <form id="contactForm">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="_replyto" placeholder="Your Email" required>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-        <p id="formStatus" style="text-align:center; margin-top:20px;"></p>
-        <p style="text-align:center; margin-top:20px;">
-            Or reach us at <a href="mailto:dianajbandel@gmail.com">dianajbandel@gmail.com</a> | 
-            Call us at (512) 808-8439
-        </p>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">Diana Bandel</div>
+      <nav>
+        <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+        <ul id="nav-list">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-</section>
+  </header>
 
-<script>
-    document.getElementById('contactForm').addEventListener('submit', async function (event) {
-        event.preventDefault();
-        const form = event.target;
-        const formData = new FormData(form);
-        const formStatus = document.getElementById('formStatus');
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div>
+      <h1>Welcome to Diana Bandel Ministries</h1>
+      <p>Guiding you through the sacred journey of marriage with faith and love.</p>
+    </div>
+  </section>
 
-        try {
-            const response = await fetch('https://formspree.io/f/xwpkqpby', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json'
-                },
-                body: formData
-            });
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <h2>About Diana</h2>
+      <div class="content">
+        <img src="assets/images/img%20(23).webp" alt="Diana Bandel">
+        <div class="text">
+          <p>
+            Two years after my own wedding, I became enamored with the entire wedding process. It began by creating hand-painted decor and invitations, evolving into the profound joy of uniting couples themselves.
+          </p>
+          <p>
+            I became licensed in 2024 and perform Christian, Christ-centered ceremonies. I collaborate with couples to craft personalized vows grounded in Biblical principles, ensuring that each ceremony is a unique reflection of their love and faith.
+          </p>
+          <p>
+            In my free time, I enjoy traveling with my husband and our two Shih Tzus, Pancake and Waffles.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            if (response.ok) {
-                form.reset();
-                formStatus.textContent = 'Message sent successfully!';
-                formStatus.style.color = 'green';
-            } else {
-                formStatus.textContent = 'There was an error sending your message.';
-                formStatus.style.color = 'red';
-            }
-        } catch (error) {
-            formStatus.textContent = 'There was an error sending your message.';
-            formStatus.style.color = 'red';
-        }
-    });
-</script>
+  <!-- Services Section -->
+  <section id="services">
+    <div class="container">
+      <h2>Services</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Marriage Ceremonies</h3>
+          <p>Beautifully tailored Christian ceremonies that honor your faith and love story.</p>
+        </div>
+        <div class="card">
+          <h3>Custom Invitations</h3>
+          <p>Handcrafted invitations with exquisite handwriting, designed to set the tone for your special day.</p>
+        </div>
+        <div class="card">
+          <h3>Sign Making</h3>
+          <p>Personalized signage to enhance your wedding decor, reflecting your unique style and theme.</p>
+        </div>
+        <div class="card">
+          <h3>Wedding Art</h3>
+          <p>Hand-painted decor and artistic elements that add a personal touch to your celebration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <div class="container">
+      <h2>My Work</h2>
+      <div class="gallery-reel">
+        <!-- Highlighted Images -->
+        <div class="highlighted">
+          <img src="assets/images/img%20(18).webp" alt="Diana Officiating a Wedding">
+          <img src="assets/images/img%20(19).webp" alt="Diana in Wedding Archway">
+        </div>
+        <!-- Image Carousel -->
+        <div class="carousel" id="carousel">
+          <div class="carousel-track">
+            <!-- Main image + 1..23 -->
+            <img src="assets/images/img.webp" alt="Wedding Decoration">
+            <img src="assets/images/img%20(4).webp" alt="Wedding Signage 4">
+            <img src="assets/images/img%20(5).webp" alt="Wedding Signage 5">
+            <img src="assets/images/img%20(6).webp" alt="Wedding Signage 6">
+            <img src="assets/images/img%20(7).webp" alt="Wedding Signage 7">
+            <img src="assets/images/img%20(8).webp" alt="Wedding Signage 8">
+            <img src="assets/images/img%20(9).webp" alt="Wedding Signage 9">
+            <img src="assets/images/img%20(10).webp" alt="Wedding Signage 10">
+            <img src="assets/images/img%20(11).webp" alt="Wedding Signage 11">
+            <img src="assets/images/img%20(12).webp" alt="Wedding Signage 12">
+            <img src="assets/images/img%20(13).webp" alt="Wedding Signage 13">
+            <img src="assets/images/img%20(14).webp" alt="Wedding Signage 14">
+            <img src="assets/images/img%20(15).webp" alt="Wedding Signage 15">
+            <img src="assets/images/img%20(16).webp" alt="Wedding Signage 16">
+            <img src="assets/images/img%20(17).webp" alt="Wedding Signage 17">
+            <img src="assets/images/img%20(20).webp" alt="Wedding Signage 18">
+            <img src="assets/images/img%20(21).webp" alt="Wedding Signage 19">
+            <img src="assets/images/img%20(22).webp" alt="Wedding Signage 20">
+            <img src="assets/images/img%20(23).webp" alt="Wedding Signage 21">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Diana Bandel Ministries. All rights reserved.</p>
-    </footer>
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Diana</h2>
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <p id="formStatus" style="text-align:center; margin-top:20px;"></p>
+      <p style="text-align:center; margin-top:20px;">
+        Or reach us at <a href="mailto:dianajbandel@gmail.com">dianajbandel@gmail.com</a> | 
+        Call us at (512) 808-8439
+      </p>
+    </div>
+  </section>
 
-    <!-- JavaScript for Mobile Menu Toggle -->
-    <script>
-        const menuToggle = document.getElementById('mobile-menu');
-        const navList = document.getElementById('nav-list');
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Diana Bandel Ministries. All rights reserved.</p>
+  </footer>
 
-        menuToggle.addEventListener('click', () => {
-            navList.classList.toggle('active');
-        });
-    </script>
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
