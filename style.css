@@ -184,7 +184,6 @@ section {
   justify-content: space-between;
   padding: 0 20px;
   z-index: 10;
-  pointer-events: none;
 }
 
 .carousel-button {
